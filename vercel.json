@@ -1,0 +1,26 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "library-backend/src/server.ts",
+      "use": "@vercel/node"
+    },
+    {
+      "src": "library-frontend/package.json",
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "dist"
+      }
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/api/(.*)",
+      "destination": "/library-backend/src/server.ts"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/library-frontend/dist/index.html"
+    }
+  ]
+}
