@@ -1,0 +1,16 @@
+# Netlify build configuration
+[build]
+  # This command builds the frontend. The -w flag is for npm workspaces.
+  command = "npm run build -w library-frontend"
+  
+  # The directory where the built frontend is located.
+  publish = "library-frontend/dist"
+
+  # The directory where your Netlify Function code is located.
+  functions = "library-backend/netlify/functions"
+
+# This rule rewrites API requests to your backend function.
+[[redirects]]
+  from = "/api/*"
+  to = "/.netlify/functions/api/:splat"
+  status = 200
