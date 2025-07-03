@@ -9,11 +9,13 @@ const app: Application = express();
 // Middleware
 app.use(express.json());
 app.use(cors({
-  // Add your new frontend URL to this list
+  // Add your mibd.shop domain to this list
   origin: [
     'http://localhost:5173',
-    'https://library-frontend-orcin.vercel.app', // Keep the old one just in case
-    'https://library-frontend-mocha.vercel.app' // Add the new one
+    'https://library-frontend-orcin.vercel.app',
+    'https://library-frontend-mocha.vercel.app',
+    'https://mibd.shop',
+    'https://www.mibd.shop'
   ]
 }));
 
