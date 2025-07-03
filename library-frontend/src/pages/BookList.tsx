@@ -52,12 +52,6 @@ export default function BookList() {
     <>
       <Banner />
 
-      {books && books.length > 0 && (
-        <FeaturedBooks books={books} onDelete={handleDelete} />
-      )}
-
-      <HowItWorks />
-
       <div className="my-16 container mx-auto px-4">
         <h1 className="text-3xl font-bold text-gray-800 mb-6 text-center">Our Full Collection</h1>
         
@@ -67,6 +61,10 @@ export default function BookList() {
           ))}
         </div>
       </div>
+
+      <HowItWorks />
+
+     
       
       <Testimonials />
 
